@@ -1,0 +1,13 @@
+export default ({ env }) => ({
+  connection: {
+    client: 'postgres',
+    connection: {
+      host: env('DATABASE_HOST', '127.0.0.1'),
+      port: env.int('DATABASE_PORT', 5432),
+      database: env('DATABASE_NAME', 'strapi-test'),
+      user: env('DATABASE_USERNAME', 'labos'),
+      password: env('DATABASE_PASSWORD', 'Carb0n12'),
+      ssl: env.bool('DATABASE_SSL', false),
+    },
+  },
+});
